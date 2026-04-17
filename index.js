@@ -6,9 +6,11 @@ dotenv.config();
 
 const app = express();
 
+const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3001';
+
 // Middlewares globales
 app.use(cors({
-  origin: 'http://localhost:3001',
+  origin: frontendUrl,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
